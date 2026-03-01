@@ -16,18 +16,24 @@ public class Main {
                 case 1:
                     conta.exibirSaldo();
                     esperarEnter(scanner);
+                    limparTela();
                     break;
-
                 case 2:
+                    limparTela();
                     System.out.print("Digite o valor para depositar: ");
+
                     double deposito = scanner.nextDouble();
                     conta.depositar(deposito);
+                    esperarEnter(scanner);
+                    limparTela();
                     break;
 
                 case 3:
                     System.out.print("Digite o valor para sacar: ");
                     double saque = scanner.nextDouble();
                     conta.sacar(saque);
+                    esperarEnter(scanner);
+                    limparTela();
                     break;
 
                 case 4:
@@ -44,21 +50,26 @@ public class Main {
     }
     //tela mt massa (mekhorar depois)
         public static void mostrarMenu() {
-    System.out.println("=================================");
-    System.out.println("           BANCO BERNARDO         ");
-    System.out.println("=================================");
-    System.out.println("1  - Ver saldo");
-    System.out.println("2  - Depositar");
-    System.out.println("3  - Sacar");
-    System.out.println("4  - Sair");
-    System.out.println("=================================");
-    System.out.print("Escolha uma opção: ");
+    System.out.println("|==============================================|");
+    System.out.println("|               BANCO BERNARDO                 |");
+    System.out.println("|==============================================|");
+    System.out.println("|  1  - Ver saldo                              |"); 
+    System.out.println("|  2  - Depositar                              |");
+    System.out.println("|  3  - Sacar                                  |");
+    System.out.println("|  4  - Sair                                   |");
+    System.out.println("|==============================================|");
+    System.out.println("|             Escolha uma opção:               |");
+    System.out.println("|==============================================|");
 }
   // Método para esperar o usuário pressionar ENTER
     public static void esperarEnter(Scanner scanner) {
     System.out.println("\nPressione ENTER para continuar...");
     scanner.nextLine();
     scanner.nextLine(); // Espera o ENTER
-
     }
+    public static void limparTela() {
+    for(int i = 0; i < 50; i++) {
+        System.out.println();
+    }
+}
 }
